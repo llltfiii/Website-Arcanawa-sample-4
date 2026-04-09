@@ -3,10 +3,10 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import villaImg from '../assets/Gemini_Generated_Image_vq8pkuvq8pkuvq8p.png';
-import residenceImg from '../assets/Gemini_Generated_Image_vq8pkuvq8pkuvq8p.png';
-import interiorImg from '../assets/Gemini_Generated_Image_vq8pkuvq8pkuvq8p.png';
-import commercialImg from '../assets/Gemini_Generated_Image_vq8pkuvq8pkuvq8p.png';
+import villaImg from '../Assets/Gemini_Generated_Image_vq8pkuvq8pkuvq8p.png';
+import residenceImg from '../Assets/Gemini_Generated_Image_vq8pkuvq8pkuvq8p.png';
+import interiorImg from '../Assets/Gemini_Generated_Image_vq8pkuvq8pkuvq8p.png';
+import commercialImg from '../Assets/Gemini_Generated_Image_vq8pkuvq8pkuvq8p.png';
 
 const heroProjects = [
   {
