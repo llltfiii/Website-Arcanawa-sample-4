@@ -70,34 +70,38 @@ export default function PortfolioDetail() {
       <section className="pb-16">
         <div className="max-w-7xl mx-auto px-6">
 
-          {project.mainMedia ? (
-            project.mainMedia.type === "video" ? (
-              <motion.video
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6 }}
-                src={project.mainMedia.src}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-125 object-cover rounded-2xl"
-              />
+          <div className="bg-gray-100 rounded-2xl overflow-hidden">
+
+            {project.mainMedia ? (
+              project.mainMedia.type === "video" ? (
+                <motion.video
+                  initial={{ opacity: 0, scale: 1.03 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                  src={project.mainMedia.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-auto max-h-[80vh] object-contain"
+                />
+              ) : (
+                <motion.img
+                  initial={{ opacity: 0, scale: 1.03 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                  src={project.mainMedia.src}
+                  className="w-full h-auto max-h-[80vh] object-contain"
+                />
+              )
             ) : (
               <motion.img
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6 }}
-                src={project.mainMedia.src}
-                className="w-full h-125 object-cover rounded-2xl"
+                src={project.mainImage}
+                className="w-full h-auto max-h-[80vh] object-contain"
               />
-            )
-          ) : (
-            <motion.img
-              src={project.mainImage}
-              className="w-full h-125 object-cover rounded-2xl"
-            />
-          )}
+            )}
+
+          </div>
 
         </div>
       </section>
@@ -170,7 +174,6 @@ export default function PortfolioDetail() {
             effect="coverflow"
             centeredSlides={true}
             grabCursor={true}
-            slidesPerView={3}
             loop={true}
             navigation={true}
             autoplay={{
@@ -178,6 +181,23 @@ export default function PortfolioDetail() {
               disableOnInteraction: false,
             }}
             pagination={{ clickable: true }}
+
+            // ✅ RESPONSIVE BREAKPOINT
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              640: {
+                slidesPerView: 1.2,
+              },
+              1024: {
+                slidesPerView: 2,
+              },
+              1280: {
+                slidesPerView: 3,
+              },
+            }}
+
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
@@ -188,24 +208,29 @@ export default function PortfolioDetail() {
           >
 
             {project.media.map((item, index) => (
-              <SwiperSlide key={index} className="max-w-105">
+              <SwiperSlide key={index} className="flex justify-center">
 
-                <div className="rounded-2xl overflow-hidden shadow-xl">
+                <div className="w-full max-w-xl">
 
-                  {item.type === "image" ? (
-                    <img
-                      src={item.src}
-                      alt={project.title}
-                      className="w-full h-105 object-cover"
-                    />
-                  ) : (
-                    <video
-                      className="w-full h-105 object-cover"
-                      controls
-                    >
-                      <source src={item.src} type="video/mp4" />
-                    </video>
-                  )}
+                  {/* CONTAINER RATIO */}
+                  <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
+
+                    {item.type === "image" ? (
+                      <img
+                        src={item.src}
+                        alt={project.title}
+                        className="w-full h-auto max-h-[75vh] object-contain"
+                      />
+                    ) : (
+                      <video
+                        className="w-full h-auto max-h-[75vh] object-contain"
+                        controls
+                      >
+                        <source src={item.src} type="video/mp4" />
+                      </video>
+                    )}
+
+                  </div>
 
                 </div>
 
