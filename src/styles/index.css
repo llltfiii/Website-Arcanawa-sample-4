@@ -1,0 +1,90 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B6F47;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A67C52;
+}
+
+/* Selection color */
+::selection {
+  background-color: #8B6F47;
+  color: #FFFFFF;
+}
+
+/* ================= SWIPER PAGINATION ================= */
+
+.swiper-pagination-bullet {
+  background: #c19a6b;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #8b5e3c;
+  opacity: 1;
+}
+
+/* ================= SWIPER NAVIGATION ================= */
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #8b5e3c;
+}
+
+/* ================= SWIPER DEPTH EFFECT ================= */
+
+/* slide default (kecil) */
+.swiper-slide {
+  opacity: 0.45;
+  transform: scale(0.8);
+  transition: all 0.5s ease;
+}
+
+/* slide aktif (tengah besar) */
+.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* slide kiri kanan */
+.swiper-slide-next,
+.swiper-slide-prev {
+  opacity: 0.75;
+  transform: scale(0.9);
+}
+
+/* bayangan agar lebih depth */
+.swiper-slide {
+  filter: brightness(0.85);
+}
+
+.swiper-slide-active {
+  filter: brightness(1);
+}
+
+/* ================= GLOBAL TRANSITIONS ================= */
+
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}

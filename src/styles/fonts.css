@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "FelixTitling";
+    src: url("/fonts/FelixTitling.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-felix {
+    font-family: "FelixTitling", serif;
+}
